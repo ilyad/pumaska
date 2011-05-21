@@ -1,0 +1,19 @@
+Files in the PUMASKA repository:
+
+pumaska.tex - generic form filling macros
+to-eps.bash - script converting scanned forms to encapsulated postscript
+scan/russia-2011-*.png - scanned Russian customs form (two sides)
+russia-2011.pumaska.tex - definitions of some fields in the above form
+example.tex - a full example: stuff needed to enter and exit Russia by car
+
+To compile the example:
+
+0) Install sam2p, texlive-{fonts-extra,lang-cyrillic,generic-recommended}
+1) Execute ./to-eps.bash (python needed)
+2) Run: latex example
+3) Run: dvips example
+4) Print 'example.ps' on a duplex printer
+
+To add more fields open the encapsulated postscript file by "gv" utility, put
+the mouse pointer to the base line of the field in question and read off the
+coordinates from the coordinates widget on the left side of the gv window.
