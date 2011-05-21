@@ -1,0 +1,32 @@
+\def\deftextfield#1#2#3{%
+  \expandafter\def\csname \currentPumaska-#1-xshift\endcsname{#2 bp}%
+  \expandafter\def\csname \currentPumaska-#1-yshift\endcsname{#3 bp}%
+}
+
+\def\textfield#1#2 {%
+  \hbox to 0pt{%
+    \hskip\csname\currentPumaska-#1-xshift\endcsname
+    \raise\csname\currentPumaska-#1-yshift\endcsname\hbox{#2}%
+    \hskip 0pt plus 1fill minus 1fill
+  }%
+}
+
+\newbox\epsfpumaskabox
+\newdimen\epsfpumaskawidth
+\def\pumaska[#1] #2\endpumaska{%
+  \def\currentPumaska{#1}%
+  \setbox\epsfpumaskabox=\hbox{\epsffile{#1.eps}}%
+  \epsfpumaskawidth=\wd\epsfpumaskabox
+  \hbox to \hsize {%
+    \hskip 0pt plus 1fill minus 1fill
+    \hbox{\box\epsfpumaskabox\hskip-\epsfpumaskawidth #2\hskip\epsfpumaskawidth}%
+    \hskip 0pt plus 1fill minus 1fill
+  }%
+  \let\currentPumaska=\undef
+}
+
+\def\fullPagePumaska[#1] #2\endpumaska{%
+  \vbox to \vsize{\vfill\pumaska[#1] #2\endpumaska\vfill}%
+}
+
+\def\checkbox#1 {\textfield{#1}{{\Large x}} }
