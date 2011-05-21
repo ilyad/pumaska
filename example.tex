@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\usepackage[text={210mm,297mm},centering]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{epsf}
+
+\thispagestyle{empty}
+
+\input pumaska.tex
+\input russia-2011.pumaska.tex
+
+\begin{document}
+
+\def\common{%
+\textfield{familia}{Хренаниеми}
+\textfield{imja}{Отсо}
+\textfield{otcestvo}{Ильмаринович}
+\textfield{strana}{Лапландия}
+\textfield{poddanstvo}{Хренландия}
+\textfield{pass-seria}{51}
+\textfield{pass-nomer}{48374859}
+\checkbox{deti-njet}
+\checkbox{stuff-2.1-njet}
+\checkbox{stuff-2.2-njet}
+\checkbox{stuff-2.3-njet}
+\checkbox{stuff-3.1-njet}
+\checkbox{stuff-3.2-njet}
+\checkbox{stuff-3.4-njet}
+\checkbox{stuff-3.5-njet}
+\checkbox{auto-da}
+\checkbox{snjato-njet}
+\textfield{vypusk}{2007}
+\textfield{objom}{3599}
+\textfield{marka}{Сампо, Вольво}
+\textfield{reg-nomer}{HH-XY 948}
+\textfield{machina-id}{KGAM G123456 654321}
+}
+
+\def\entry{%
+\checkbox{box-vezd}
+\textfield{otkuda}{Похьёла}
+\textfield{kuda}{Карьяла}
+\checkbox{vremeny-vvoz}
+}
+
+\def\exit{%
+\checkbox{box-vyezd}
+\textfield{kuda}{Похьёла}
+\textfield{otkuda}{Карьяла}
+\checkbox{obratny-vyvoz}
+}
+
+\def\back{%
+\textfield{god}{2011}
+}
+
+\fullPagePumaska[russia-2011-front] \common \entry \endpumaska
+\fullPagePumaska[russia-2011-back] \back \endpumaska
+\fullPagePumaska[russia-2011-front] \common \entry \endpumaska
+\fullPagePumaska[russia-2011-back] \back \endpumaska
+\fullPagePumaska[russia-2011-front] \common \exit  \endpumaska
+\fullPagePumaska[russia-2011-back] \back \endpumaska
+
+\end{document}
