@@ -8,3 +8,4 @@ doit()
 
 doit russia-2011-back
 doit russia-2011-front
+doit arag-2018
