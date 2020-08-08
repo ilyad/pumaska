@@ -16,4 +16,4 @@ doit russia-2011-back
 doit russia-2011-front
 doit arag-2018
 
-./pdf2eps.sh 4 kela-sv178e-2020-08.pdf 2>errors
+./pdf2eps.sh 4 kela-sv178e-2019-04.pdf 2>errors
