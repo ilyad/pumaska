@@ -4,17 +4,18 @@ pumaska.tex - generic form filling macros
 to-eps.sh - script converting scanned forms to encapsulated postscript
 scan/russia-2011-*.png - scanned Russian customs form (two sides)
 russia-2011.pumaska.tex - definitions of some fields in the above form
-example.tex - a full example: stuff needed to enter and exit Russia by car
+example-ru.tex - a full example: stuff needed to enter and exit Russia by car
+example-{arag,kela}.tex - more examples
 
-To compile the example:
+To compile the examples:
 
 0) Install sam2p, poppler-utils, bash
    texlive-{fonts-extra,lang-cyrillic,generic-recommended,extra-utils}
 1) Execute ./to-eps.sh
-2) Run: latex example && dvips example
-3) Run: latex arag-example && dvips arag-example
-4) Run: latex kela-example && dvips kela-example
-5) Print all the '*example.ps' files on a duplex printer
+2) Run: latex example-ru   && dvips example-ru
+3) Run: latex example-arag && dvips example-arag
+4) Run: latex example-kela && dvips example-kela
+5) Print all the 'example-*.ps' files on a duplex printer
 
 To add more fields open the encapsulated postscript file by "gv" utility, put
 the mouse pointer to the base line of the field in question and read off the
