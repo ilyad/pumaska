@@ -1,0 +1,21 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[text={210mm,297mm},centering]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{epsf}
+
+\thispagestyle{empty}
+
+\input pumaska.tex
+\input impfbescheinigung-bonn.pumaska.tex
+
+\begin{document}
+
+\fullPagePumaska[impfbescheinigung-bonn.pdf.page-1]
+\textfield{name-vorname}{\large\tt MUSTERMANN, MAX}
+\textfield{geb-datum}{\large\tt 01.02.1913}
+\textfield{biontech}{x}
+\textfield{datum-1}{\tt 01.02.2023}
+\textfield{datum-2}{\tt 05.06.2024}
+\endpumaska
+
+\end{document}
